@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModNest Furniture Landing Page</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #171717;
+      --muted: #777777;
+      --line: #eeeeee;
+      --tan: #c99f6f;
+      --tan-dark: #b88f5f;
+      --card: #ffffff;
+      --shadow: 0 18px 50px rgba(18, 18, 18, 0.08);
+      --radius-xl: 44px;
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --black: #111111;
+      --yellow: #ffc928;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1380px, calc(100% - 64px));
+      margin: 0 auto;
+      padding: 18px 0 52px;
+    }
+
+    /* ================= Header ================= */
+    .navbar {
+      height: 68px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.055);
+      border: 1px solid rgba(18, 18, 18, 0.035);
+      display: grid;
+      grid-template-columns: 220px 1fr 220px;
+      align-items: center;
+      padding: 0 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--black);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .logo-mark::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: #ffffff;
+      clip-path: polygon(50% 0%, 61% 35%, 100% 50%, 61% 65%, 50% 100%, 39% 65%, 0% 50%, 39% 35%);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(28px, 5vw, 68px);
+      font-size: 15px;
+      font-weight: 600;
+      color: #2d2d2d;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    .icon-btn {
+      border: 0;
+      background: transparent;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #252525;
+    }
+
+    .icon-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2.2;
+    }
+
+    /* ================= Hero ================= */
+    .hero {
+      padding-top: 92px;
+    }
+
+    .hero-title {
+      text-align: center;
+      font-size: clamp(46px, 6vw, 74px);
+      line-height: 1.16;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+      max-width: 980px;
+      margin: 0 auto 58px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 34px;
+      align-items: stretch;
+      position: relative;
+    }
+
+    .main-showcase {
+      min-height: 540px;
+      border-radius: var(--radius-xl);
+      position: relative;
+      background: linear-gradient(180deg, #d2ac7b 0%, #c59a68 100%);
+      overflow: visible;
+      box-shadow: 0 28px 60px rgba(73, 50, 28, 0.12);
+    }
+
+    .main-showcase::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 37%;
+      background: #f7f7f5;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    }
+
+    .main-showcase::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 22%;
+      background: #eeeeeb;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      z-index: 0;
+    }
+
+    .review-badge {
+      position: absolute;
+      top: 8px;
+      left: -2px;
+      min-width: 244px;
+      height: 84px;
+      padding: 16px 22px 16px 14px;
+      background: #ffffff;
+      border-bottom-right-radius: 38px;
+      border-top-left-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .avatar-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      margin-left: -11px;
+      background: linear-gradient(135deg, #7d563d, #e8c6a6);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+      background: linear-gradient(135deg, #1f252d, #c28c65);
+    }
+
+    .avatar:nth-child(2) {
+      background: linear-gradient(135deg, #e6b891, #232323);
+    }
+
+    .avatar:nth-child(3) {
+      background: linear-gradient(135deg, #2b6c80, #efe1d0);
+    }
+
+    .avatar::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #f2c29e;
+    }
+
+    .avatar::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 3px;
+      transform: translateX(-50%);
+      width: 25px;
+      height: 18px;
+      border-radius: 50% 50% 0 0;
+      background: rgba(18,18,18,0.82);
+    }
+
+    .avatar.more {
+      display: grid;
+      place-items: center;
+      background: #111111;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .avatar.more::before,
+    .avatar.more::after {
+      display: none;
+    }
+
+    .review-badge span {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.22;
+    }
+
+    .sofa-scene {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .sofa {
+      position: absolute;
+      left: 56px;
+      right: 90px;
+      bottom: 142px;
+      height: 162px;
+    }
+
+    .sofa-seat {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 20px;
+      height: 88px;
+      background: linear-gradient(180deg, #f0f1ed 0%, #dedfd9 100%);
+      border-radius: 22px 22px 18px 18px;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+    }
+
+    .sofa-back {
+      position: absolute;
+      left: 106px;
+      right: 106px;
+      bottom: 92px;
+      height: 112px;
+      background: linear-gradient(180deg, #f6f6f2 0%, #dedfd8 100%);
+      border-radius: 30px 30px 16px 16px;
+      box-shadow: inset 0 -12px 18px rgba(0,0,0,0.04);
+    }
+
+    .arm {
+      position: absolute;
+      bottom: 9px;
+      width: 94px;
+      height: 208px;
+      background: linear-gradient(180deg, #f6f7f3 0%, #dfdfd7 100%);
+      border-radius: 42px 42px 26px 26px;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+    }
+
+    .arm.left { left: 0; }
+    .arm.right { right: 0; }
+
+    .pillow {
+      position: absolute;
+      bottom: 112px;
+      width: 112px;
+      height: 152px;
+      background: linear-gradient(135deg, #f5f5f1 0%, #dedfd8 100%);
+      border-radius: 34px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+
+    .pillow.left {
+      left: 98px;
+      transform: rotate(-8deg);
+    }
+
+    .pillow.right {
+      right: 98px;
+      transform: rotate(8deg);
+    }
+
+    .leg {
+      position: absolute;
+      bottom: -58px;
+      width: 23px;
+      height: 78px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #e7c38f, #c99a61);
+      box-shadow: 0 12px 16px rgba(0,0,0,0.12);
+    }
+
+    .leg.l1 { left: 44px; }
+    .leg.l2 { right: 44px; }
+
+    .coffee-table {
+      position: absolute;
+      right: 220px;
+      bottom: 75px;
+      width: 245px;
+      height: 132px;
+      z-index: 4;
+    }
+
+    .table-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 245px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #efd8b3, #d7b079);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.14);
+    }
+
+    .table-leg {
+      position: absolute;
+      top: 44px;
+      width: 14px;
+      height: 88px;
+      border-radius: 999px;
+      background: #d4a96f;
+    }
+
+    .table-leg.one { left: 54px; transform: rotate(7deg); }
+    .table-leg.two { left: 117px; }
+    .table-leg.three { right: 54px; transform: rotate(-7deg); }
+
+    .plant {
+      position: absolute;
+      right: 344px;
+      bottom: 201px;
+      width: 80px;
+      height: 130px;
+      z-index: 5;
+    }
+
+    .pot {
+      position: absolute;
+      bottom: 0;
+      left: 18px;
+      width: 48px;
+      height: 34px;
+      background: linear-gradient(180deg, #f4eee1, #d9c8ad);
+      border-radius: 8px 8px 20px 20px;
+      box-shadow: 0 8px 14px rgba(0,0,0,0.1);
+    }
+
+    .leaf {
+      position: absolute;
+      bottom: 28px;
+      left: 36px;
+      width: 10px;
+      height: 75px;
+      background: #4d6b23;
+      border-radius: 999px;
+      transform-origin: bottom;
+    }
+
+    .leaf.one { transform: rotate(-7deg); }
+    .leaf.two { transform: rotate(6deg); height: 90px; left: 45px; }
+    .leaf.three { transform: rotate(-19deg); height: 60px; left: 30px; }
+
+    .rug {
+      position: absolute;
+      left: 18px;
+      right: 38px;
+      bottom: 35px;
+      height: 118px;
+      border-radius: 6px;
+      background: #f7f7f4;
+      z-index: 1;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+
+    .rug span {
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: rgba(0,0,0,0.12);
+      transform: rotate(-10deg);
+    }
+
+    .rug span:nth-child(1) { left: 140px; }
+    .rug span:nth-child(2) { left: 282px; }
+    .rug span:nth-child(3) { left: 424px; }
+    .rug span:nth-child(4) { left: 566px; }
+    .rug span:nth-child(5) { left: 708px; }
+
+    .shop-pill {
+      position: absolute;
+      right: 22px;
+      bottom: 2px;
+      width: 208px;
+      height: 82px;
+      border-radius: 999px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      box-shadow: 0 -1px 0 rgba(0,0,0,0.02);
+    }
+
+    .shop-pill a {
+      width: 172px;
+      height: 60px;
+      border-radius: 999px;
+      background: var(--black);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 11px 0 28px;
+      font-size: 15px;
+      font-weight: 800;
+      box-shadow: 0 15px 26px rgba(0,0,0,0.18);
+    }
+
+    .shop-pill .arrow {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #111111;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    /* ================= Product Cards ================= */
+    .side-products {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .product-card {
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-height: 253px;
+    }
+
+    .product-image {
+      height: 168px;
+      background: #f6f5f2;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image.peach {
+      background: linear-gradient(135deg, #fff 0%, #f0d7cd 100%);
+    }
+
+    .product-image.blue {
+      background: linear-gradient(135deg, #f4f4f2 0%, #eef1f2 100%);
+    }
+
+    .mini-chair {
+      position: absolute;
+      inset: 22px 34px 20px 34px;
+    }
+
+    .mini-chair .chair-back {
+      position: absolute;
+      left: 32px;
+      top: 0;
+      width: 96px;
+      height: 95px;
+      border-radius: 20px 20px 12px 12px;
+      background: var(--chair-color, #e7afa2);
+      box-shadow: inset 0 -14px 24px rgba(0,0,0,0.08);
+    }
+
+    .mini-chair .chair-seat {
+      position: absolute;
+      left: 25px;
+      top: 82px;
+      width: 112px;
+      height: 38px;
+      border-radius: 14px;
+      background: var(--chair-color, #e7afa2);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.13);
+    }
+
+    .mini-chair .chair-arm {
+      position: absolute;
+      top: 66px;
+      width: 24px;
+      height: 52px;
+      border-radius: 18px 18px 10px 10px;
+      background: var(--chair-color, #e7afa2);
+    }
+
+    .mini-chair .chair-arm.left { left: 8px; }
+    .mini-chair .chair-arm.right { right: 8px; }
+
+    .mini-chair .chair-leg {
+      position: absolute;
+      top: 116px;
+      width: 8px;
+      height: 40px;
+      background: #222;
+      border-radius: 999px;
+    }
+
+    .mini-chair .chair-leg.one { left: 35px; }
+    .mini-chair .chair-leg.two { right: 35px; }
+
+    .mini-chair .pillow-small {
+      position: absolute;
+      left: 64px;
+      top: 36px;
+      width: 43px;
+      height: 43px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1f2b76, #8072bb);
+      transform: rotate(6deg);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.16);
+    }
+
+    .mini-chair.blue-chair {
+      --chair-color: #007baa;
+    }
+
+    .mini-chair.blue-chair .chair-back,
+    .mini-chair.blue-chair .chair-seat,
+    .mini-chair.blue-chair .chair-arm {
+      background: linear-gradient(135deg, #008cc1, #005f95);
+    }
+
+    .tuft {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      box-shadow: 18px 0 rgba(255,255,255,0.38), 36px 0 rgba(255,255,255,0.34), 9px 17px rgba(255,255,255,0.38), 27px 17px rgba(255,255,255,0.34);
+      left: 46px;
+      top: 24px;
+    }
+
+    .product-info {
+      padding: 16px 17px 17px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 14px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .stars {
+      color: var(--yellow);
+      font-size: 15px;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    .stars span {
+      color: #e8e8e8;
+    }
+
+    .price {
+      font-size: 17px;
+      font-weight: 800;
+      padding-top: 4px;
+    }
+
+    /* ================= Responsive ================= */
+    @media (max-width: 1100px) {
+      .page {
+        width: min(100% - 32px, 980px);
+      }
+
+      .navbar {
+        grid-template-columns: 180px 1fr 150px;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-products {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .main-showcase {
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 24px, 640px);
+        padding-top: 12px;
+      }
+
+      .navbar {
+        height: auto;
+        min-height: 64px;
+        grid-template-columns: 1fr auto;
+        padding: 14px 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-actions {
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .hero-title {
+        font-size: 42px;
+        margin-bottom: 36px;
+      }
+
+      .main-showcase {
+        min-height: 460px;
+        border-radius: 32px;
+      }
+
+      .review-badge {
+        top: 0;
+        height: 76px;
+        min-width: 218px;
+      }
+
+      .avatar {
+        width: 36px;
+        height: 36px;
+      }
+
+      .sofa {
+        left: 28px;
+        right: 28px;
+        bottom: 150px;
+        transform: scale(0.9);
+        transform-origin: bottom center;
+      }
+
+      .coffee-table {
+        right: 120px;
+        transform: scale(0.84);
+        transform-origin: bottom right;
+      }
+
+      .plant {
+        right: 235px;
+        transform: scale(0.82);
+        transform-origin: bottom center;
+      }
+
+      .side-products {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .navbar {
+        border-radius: 24px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .nav-actions .icon-btn:first-child {
+        display: none;
+      }
+
+      .main-showcase {
+        min-height: 410px;
+      }
+
+      .sofa {
+        transform: scale(0.72);
+        left: -35px;
+        right: -35px;
+        bottom: 122px;
+      }
+
+      .coffee-table,
+      .plant {
+        display: none;
+      }
+
+      .shop-pill {
+        right: 12px;
+        bottom: 10px;
+        width: 190px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="navbar">
+      <a href="#" class="brand" aria-label="ModNest home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>ModNest</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#">Products</a>
+        <a href="#">About Us</a>
+        <a href="#">Our Store</a>
+        <a href="#">Delivery</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M20 20l-3.5-3.5"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8h12l-1 12H7L6 8Z"></path>
+            <path d="M9 8a3 3 0 0 1 6 0"></path>
+            <path d="M10 12h4"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21a8 8 0 0 1 16 0"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1 class="hero-title">Transform Your Space with Perfect Furniture</h1>
+
+      <div class="hero-layout">
+        <div class="main-showcase">
+          <div class="review-badge">
+            <div class="avatar-group" aria-hidden="true">
+              <span class="avatar"></span>
+              <span class="avatar"></span>
+              <span class="avatar"></span>
+              <span class="avatar more">+12k</span>
+            </div>
+            <span>Check<br />reviews</span>
+          </div>
+
+          <div class="sofa-scene" aria-label="Furniture showcase illustration">
+            <div class="rug">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="sofa">
+              <div class="sofa-back"></div>
+              <div class="arm left"></div>
+              <div class="arm right"></div>
+              <div class="sofa-seat"></div>
+              <div class="pillow left"></div>
+              <div class="pillow right"></div>
+              <div class="leg l1"></div>
+              <div class="leg l2"></div>
+            </div>
+
+            <div class="coffee-table">
+              <div class="table-top"></div>
+              <div class="table-leg one"></div>
+              <div class="table-leg two"></div>
+              <div class="table-leg three"></div>
+            </div>
+
+            <div class="plant">
+              <span class="leaf one"></span>
+              <span class="leaf two"></span>
+              <span class="leaf three"></span>
+              <span class="pot"></span>
+            </div>
+          </div>
+
+          <div class="shop-pill">
+            <a href="#">
+              <span>Shop Now</span>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="side-products" aria-label="Featured products">
+          <article class="product-card">
+            <div class="product-image peach">
+              <div class="mini-chair" style="--chair-color:#e6a99c;">
+                <div class="chair-back"></div>
+                <div class="chair-seat"></div>
+                <div class="chair-arm left"></div>
+                <div class="chair-arm right"></div>
+                <div class="chair-leg one"></div>
+                <div class="chair-leg two"></div>
+                <div class="pillow-small"></div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h2 class="product-name">Muffin Chair</h2>
+                <div class="stars">★★★★<span>★</span></div>
+              </div>
+              <p class="price">$126.00</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image blue">
+              <div class="mini-chair blue-chair">
+                <div class="chair-back"><span class="tuft"></span></div>
+                <div class="chair-seat"></div>
+                <div class="chair-arm left"></div>
+                <div class="chair-arm right"></div>
+                <div class="chair-leg one"></div>
+                <div class="chair-leg two"></div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div>
+                <h2 class="product-name">Muffin Chair</h2>
+                <div class="stars">★★★★★</div>
+              </div>
+              <p class="price">$138.00</p>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
