@@ -1,0 +1,2862 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshar Foshan | Hospitality FF&E Solutions</title>
+    <meta name="description" content="Akshar Foshan hospitality FF&E, hotel furniture, casegoods, upholstery, lighting, mirrors, quality control and logistics support." />
+    <meta name="keywords" content="Akshar Foshan, hotel furniture, hospitality furniture, FF&amp;E, casegoods, upholstery, hotel procurement, Foshan furniture, custom hotel furniture" />
+    <meta name="author" content="Akshar Foshan" />
+    <meta name="contact:email" content="yogin@aksharfoshan.com" />
+    <meta name="contact:phone" content="+1 (760) 617-0800" />
+    <meta property="og:title" content="Akshar Foshan | Hospitality FF&amp;E Solutions" />
+    <meta property="og:description" content="Hospitality furniture, casegoods, upholstery, lighting, mirrors, sourcing, quality control, and logistics support for hotel projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Akshar Foshan" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Akshar Foshan | Hospitality FF&amp;E Solutions" />
+    <meta name="twitter:description" content="Hospitality furniture and FF&amp;E support for hotel owners, designers, contractors, and procurement teams." />
+
+    <link rel="icon" type="image/png" href="logo.png" />
+
+    <style>
+        :root {
+        --purple: #5B2A86;
+        --purple-dark: #2B123D;
+        --purple-soft: rgba(91, 42, 134, 0.10);
+        --black: #000000;
+        --white: #FFFFFF;
+        --beige: #F7F3EC;
+        --beige-2: #FBF7F0;
+        --line: #D8CEC1;
+        --text: #000000;
+        --muted: rgba(0, 0, 0, 0.62);
+        --container: 1200px;
+        --radius-xl: 36px;
+        --radius-lg: 26px;
+        --radius-md: 18px;
+        --shadow: 0 26px 80px rgba(43, 18, 61, 0.12);
+        }
+
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 110px;
+        }
+
+        body {
+        font-family: Avenir, "Avenir Next", "Segoe UI", Arial, sans-serif;
+        background:
+            radial-gradient(circle at 10% 4%, rgba(91, 42, 134, 0.10), transparent 28%),
+            radial-gradient(circle at 88% 18%, rgba(91, 42, 134, 0.08), transparent 32%),
+            linear-gradient(180deg, var(--white) 0%, var(--beige-2) 45%, var(--beige) 100%);
+        color: var(--text);
+        overflow-x: hidden;
+        }
+
+        body.menu-open {
+        overflow: hidden;
+        }
+
+        img {
+        width: 100%;
+        display: block;
+        }
+
+        a {
+        color: inherit;
+        text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+        font: inherit;
+        }
+
+        .container {
+        width: min(100% - 40px, var(--container));
+        margin-inline: auto;
+        }
+
+        .section {
+        padding: 108px 0;
+        position: relative;
+        }
+
+        .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 36px;
+        margin-bottom: 48px;
+        }
+
+        .section-kicker {
+        color: var(--purple);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        }
+
+        .section-title {
+        max-width: 770px;
+        font-size: clamp(34px, 4.2vw, 62px);
+        line-height: 1.04;
+        letter-spacing: -0.055em;
+        font-weight: 700;
+        }
+
+        .section-copy {
+        max-width: 500px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+        }
+
+        .btn {
+        min-height: 54px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 24px;
+        border-radius: 999px;
+        border: 0;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 800;
+        transition: transform 0.12s ease, background 0.12s ease;
+        white-space: nowrap;
+        }
+
+        .btn-primary {
+        background: var(--purple);
+        color: var(--white);
+        box-shadow: 0 16px 34px rgba(91, 42, 134, 0.20);
+        }
+
+        .btn-primary:hover {
+        background: var(--purple-dark);
+        transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+        background: var(--white);
+        color: var(--purple-dark);
+        }
+
+        .btn-secondary:hover {
+        transform: translateY(-2px);
+        }
+
+        .btn-dark {
+        background: var(--black);
+        color: var(--white);
+        }
+
+        .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+
+        .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+        }
+
+        /* Navbar */
+        .site-header {
+        position: fixed;
+        top: 18px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        pointer-events: none;
+        }
+
+        .navbar {
+        width: min(100% - 40px, var(--container));
+        min-height: 74px;
+        margin: 0 auto;
+        padding: 0 22px;
+        border: 1px solid rgba(216, 206, 193, 0.78);
+        border-radius: 999px;
+        background: rgba(247, 243, 236, 0.90);
+        backdrop-filter: blur(18px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 18px 48px rgba(43, 18, 61, 0.08);
+        pointer-events: auto;
+        }
+
+        .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        }
+
+        .brand-logo {
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+        border-radius: 50%;
+        padding: 7px;
+        }
+
+        .brand small {
+        display: block;
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-top: 2px;
+        }
+
+        .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-size: 13px;
+        font-weight: 800;
+        }
+
+        .nav-links a {
+        position: relative;
+        }
+
+        .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -9px;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--purple);
+        transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover::after {
+        width: 100%;
+        }
+
+        .nav-cta {
+        background: var(--purple-dark);
+        color: var(--beige);
+        padding: 13px 20px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 800;
+        }
+
+        .hamburger {
+        display: none;
+        width: 46px;
+        height: 46px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.72);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        }
+
+        .hamburger span {
+        width: 18px;
+        height: 2px;
+        border-radius: 99px;
+        background: var(--purple-dark);
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .mobile-menu {
+        display: none;
+        width: min(100% - 40px, var(--container));
+        margin: 12px auto 0;
+        padding: 16px;
+        border-radius: 28px;
+        border: 1px solid var(--line);
+        background: rgba(247, 243, 236, 0.98);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
+        pointer-events: auto;
+        }
+
+        .mobile-menu.active {
+        display: grid;
+        gap: 6px;
+        }
+
+        .mobile-menu a {
+        padding: 15px 16px;
+        border-radius: 18px;
+        color: var(--purple-dark);
+        font-weight: 800;
+        }
+
+        .mobile-menu .mobile-cta {
+        background: var(--purple-dark);
+        color: var(--beige);
+        text-align: center;
+        margin-top: 8px;
+        }
+
+        /* Hero */
+        .hero {
+        min-height: 100vh;
+        padding: 154px 0 96px;
+        display: flex;
+        align-items: center;
+        background:
+            radial-gradient(circle at 82% 14%, rgba(91, 42, 134, 0.14), transparent 32%),
+            linear-gradient(180deg, var(--white), var(--beige-2));
+        overflow: hidden;
+        }
+
+        .hero-grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 74px;
+        }
+
+        .hero-content {
+        flex: 0 1 52%;
+        }
+
+        .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--purple);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        }
+
+        .hero-kicker::before {
+        content: "";
+        width: 38px;
+        height: 1px;
+        background: var(--purple);
+        }
+
+        .hero-title {
+        max-width: 760px;
+        font-size: clamp(46px, 6.3vw, 88px);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+        font-weight: 700;
+        margin-bottom: 26px;
+        }
+
+        .hero-title span {
+        color: var(--purple);
+        }
+
+        .hero-copy {
+        max-width: 640px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.85;
+        margin-bottom: 34px;
+        }
+
+        .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        }
+
+        .hero-image-wrap {
+        flex: 0 1 48%;
+        position: relative;
+        min-height: 620px;
+        display: grid;
+        place-items: center;
+        }
+
+        .hero-image-wrap::before {
+        content: "";
+        position: absolute;
+        width: min(92%, 610px);
+        aspect-ratio: 1 / 1;
+        border-radius: 48px;
+        background:
+            radial-gradient(circle at 26% 20%, rgba(255, 255, 255, 0.96), transparent 28%),
+            linear-gradient(135deg, rgba(91, 42, 134, 0.17), rgba(247, 243, 236, 0.94));
+        border: 1px solid rgba(216, 206, 193, 0.78);
+        transform: rotate(-5deg);
+        }
+
+        .hero-image {
+        position: relative;
+        z-index: 2;
+        width: min(94%, 650px);
+        height: 560px;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: var(--beige);
+        }
+
+        .hero-image img {
+        height: 100%;
+        object-fit: cover;
+        }
+
+        /* Client marquee */
+        .client-marquee-section {
+        padding: 54px 0;
+        overflow: hidden;
+        background: var(--white);
+        border-top: 1px solid rgba(216, 206, 193, 0.66);
+        border-bottom: 1px solid rgba(216, 206, 193, 0.66);
+        }
+
+        .marquee-title {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 26px;
+        }
+
+        .client-marquee {
+        display: flex;
+        gap: 18px;
+        width: max-content;
+        animation: clientMove 32s linear infinite;
+        }
+
+        .client-marquee:hover {
+        animation-play-state: paused;
+        }
+
+        .client-logo {
+        width: 230px;
+        height: 110px;
+        flex: 0 0 auto;
+        border-radius: 18px;
+        overflow: hidden;
+        background: var(--white);
+        }
+
+        .client-logo img {
+        height: 100%;
+        object-fit: cover;
+        }
+
+        @keyframes clientMove {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-50% - 9px)); }
+        }
+
+        /* About */
+        .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        align-items: center;
+        }
+
+        .about-image {
+        min-height: 560px;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        background: var(--beige);
+        box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+        height: 100%;
+        object-fit: cover;
+        }
+
+        .about-text p {
+        color: var(--muted);
+        line-height: 1.82;
+        margin-top: 18px;
+        }
+
+        .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 34px;
+        }
+
+        .stat-card {
+        min-height: 116px;
+        padding: 20px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(216, 206, 193, 0.72);
+        }
+
+        .stat-card strong {
+        display: block;
+        color: var(--purple);
+        font-size: 32px;
+        line-height: 1;
+        margin-bottom: 10px;
+        letter-spacing: -0.04em;
+        }
+
+        .stat-card span {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+        font-weight: 700;
+        }
+
+        /* Services */
+        .services-section {
+        background:
+            radial-gradient(circle at 90% 12%, rgba(91, 42, 134, 0.12), transparent 30%),
+            linear-gradient(180deg, var(--beige-2), var(--white));
+        }
+
+        .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        }
+
+        .service-card {
+        min-height: 300px;
+        padding: 28px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(216, 206, 193, 0.70);
+        transition: transform 0.12s ease, background 0.12s ease;
+        }
+
+        .service-card:hover {
+        transform: translateY(-6px);
+        background: var(--white);
+        }
+
+        .service-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        background:
+            linear-gradient(135deg, var(--purple), var(--purple-dark));
+        display: grid;
+        place-items: center;
+        margin-bottom: 46px;
+        }
+
+        .service-icon svg {
+        width: 28px;
+        height: 28px;
+        fill: none;
+        stroke: var(--white);
+        stroke-width: 2;
+        }
+
+        .service-card h3 {
+        font-size: 22px;
+        letter-spacing: -0.03em;
+        margin-bottom: 12px;
+        }
+
+        .service-card p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.75;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+        }
+
+        .portfolio-card {
+        position: relative;
+        min-height: 420px;
+        grid-column: span 6;
+        border-radius: 30px;
+        overflow: hidden;
+        background: var(--beige);
+        box-shadow: 0 22px 70px rgba(43, 18, 61, 0.10);
+        }
+
+        .portfolio-card.wide {
+        grid-column: span 12;
+        min-height: 480px;
+        }
+
+        .portfolio-card img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+        }
+
+        .portfolio-card:hover img {
+        transform: scale(1.06);
+        }
+
+        .portfolio-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.70)),
+            linear-gradient(90deg, rgba(43, 18, 61, 0.28), transparent 64%);
+        }
+
+        .portfolio-content {
+        position: absolute;
+        left: 28px;
+        right: 28px;
+        bottom: 28px;
+        z-index: 2;
+        color: var(--white);
+        }
+
+        .portfolio-content span {
+        display: block;
+        color: var(--beige);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        }
+
+        .portfolio-content h3 {
+        max-width: 650px;
+        font-size: clamp(26px, 3vw, 44px);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+        margin-bottom: 12px;
+        }
+
+        .portfolio-content p {
+        max-width: 560px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+        line-height: 1.65;
+        }
+
+
+        /* Footer */
+        .footer {
+        background:
+            radial-gradient(circle at 12% 0%, rgba(91, 42, 134, 0.09), transparent 28%),
+            linear-gradient(180deg, var(--beige-2), var(--beige));
+        border-top: 1px solid rgba(216, 206, 193, 0.7);
+        padding: 78px 0 34px;
+        color: var(--muted);
+        font-size: 14px;
+        }
+
+        .footer-shell {
+        width: min(100% - 40px, var(--container));
+        margin: 0 auto;
+        }
+
+        .footer-cta {
+        position: relative;
+        min-height: 320px;
+        border-radius: 38px;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 60px 26px;
+        color: var(--beige);
+        background:
+            radial-gradient(circle at 18% 18%, rgba(247, 243, 236, 0.16), transparent 26%),
+            radial-gradient(circle at 82% 88%, rgba(91, 42, 134, 0.42), transparent 34%),
+            linear-gradient(135deg, var(--black), var(--purple-dark) 58%, var(--purple));
+        border: 1px solid rgba(247, 243, 236, 0.18);
+        box-shadow: 0 30px 90px rgba(43, 18, 61, 0.18);
+        }
+
+        .footer-cta::before {
+        content: "AKSHAR FOSHAN";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.05);
+        font-size: clamp(70px, 11vw, 150px);
+        font-weight: 800;
+        letter-spacing: -0.08em;
+        white-space: nowrap;
+        pointer-events: none;
+        }
+
+        .footer-cta-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+        margin: 0 auto;
+        }
+
+        .footer-cta h2 {
+        font-size: clamp(34px, 4.4vw, 60px);
+        line-height: 1.06;
+        letter-spacing: -0.06em;
+        font-weight: 700;
+        margin-bottom: 18px;
+        }
+
+        .footer-cta p {
+        max-width: 650px;
+        margin: 0 auto 30px;
+        color: rgba(247, 243, 236, 0.78);
+        font-size: 15px;
+        line-height: 1.8;
+        }
+
+        .footer-cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 52px;
+        padding: 0 22px 0 24px;
+        border-radius: 999px;
+        background: var(--beige);
+        color: var(--purple-dark);
+        font-size: 14px;
+        font-weight: 800;
+        transition: transform 0.12s ease, background 0.12s ease;
+        }
+
+        .footer-cta-button:hover {
+        transform: translateY(-2px);
+        background: var(--white);
+        }
+
+        .footer-main {
+        display: grid;
+        grid-template-columns: 1.2fr 0.55fr 0.65fr 1fr;
+        gap: 58px;
+        padding: 70px 0 54px;
+        }
+
+        .footer-brand {
+        max-width: 350px;
+        }
+
+        .footer-logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+        color: var(--purple-dark);
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        }
+
+        .footer-logo-row img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+        border-radius: 50%;
+        padding: 7px;
+        }
+
+        .footer-brand p,
+        .footer-newsletter p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+        }
+
+        .footer-column h3,
+        .footer-newsletter h3 {
+        color: var(--black);
+        font-size: 20px;
+        letter-spacing: -0.04em;
+        margin-bottom: 22px;
+        }
+
+        .footer-links {
+        display: grid;
+        gap: 14px;
+        }
+
+        .footer-links a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .footer-links a:hover {
+        color: var(--purple);
+        transform: translateX(3px);
+        }
+
+        .newsletter-form {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 8px;
+        min-height: 62px;
+        margin-top: 24px;
+        padding: 6px;
+        border: 1px solid rgba(216, 206, 193, 0.9);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.66);
+        }
+
+        .newsletter-form input {
+        width: 100%;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        padding: 0 14px;
+        color: var(--text);
+        font-size: 14px;
+        }
+
+        .newsletter-form button {
+        min-height: 48px;
+        border: 0;
+        border-radius: 999px;
+        padding: 0 18px;
+        background: var(--purple-dark);
+        color: var(--beige);
+        font-size: 14px;
+        font-weight: 800;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        }
+
+        .footer-bottom {
+        min-height: 58px;
+        padding: 0 20px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(216, 206, 193, 0.76);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        color: rgba(0, 0, 0, 0.52);
+        font-size: 13px;
+        }
+
+        .footer-policy {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 32px;
+        }
+
+        .footer-policy a:hover {
+        color: var(--purple);
+        }
+
+        /* Top scroll arrow */
+        .scroll-top {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 999;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--purple);
+        color: var(--white);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+        box-shadow: 0 18px 42px rgba(43, 18, 61, 0.22);
+        }
+
+        .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        }
+
+        .scroll-top svg {
+        width: 22px;
+        height: 22px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.4;
+        }
+
+        @media (max-width: 1120px) {
+        .nav-links,
+        .nav-cta {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .hero-grid {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero-content,
+        .hero-image-wrap {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+
+        .hero-image-wrap {
+            min-height: 560px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .portfolio-card,
+        .portfolio-card.wide {
+            grid-column: span 12;
+        }
+
+        .footer-main {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .footer-newsletter {
+            grid-column: span 2;
+        }
+        }
+
+        @media (max-width: 760px) {
+        .container,
+        .navbar,
+        .mobile-menu {
+            width: min(100% - 28px, var(--container));
+        }
+
+        .navbar {
+            min-height: 66px;
+            border-radius: 26px;
+            padding: 0 16px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .brand {
+            font-size: 14px;
+        }
+
+        .brand small {
+            font-size: 8px;
+        }
+
+        .hero {
+            min-height: auto;
+            padding: 126px 0 72px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+        }
+
+        .hero-copy {
+            font-size: 15px;
+        }
+
+        .hero-image-wrap {
+            min-height: auto;
+            display: block;
+        }
+
+        .hero-image-wrap::before {
+            display: none;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 430px;
+            border-radius: 26px;
+        }
+
+        .section {
+            padding: 78px 0;
+        }
+
+        .section-header {
+            display: block;
+        }
+
+        .section-copy {
+            margin-top: 18px;
+        }
+
+        .stats-grid,
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-image {
+            min-height: 430px;
+        }
+
+        .portfolio-card,
+        .portfolio-card.wide {
+            min-height: 390px;
+        }
+
+        .client-logo {
+            width: 210px;
+            height: 100px;
+        }
+
+        .footer {
+            padding: 54px 0 28px;
+        }
+
+        .footer-shell {
+            width: min(100% - 28px, var(--container));
+        }
+
+        .footer-cta {
+            min-height: 260px;
+            border-radius: 28px;
+            padding: 42px 22px;
+        }
+
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 34px;
+            padding: 48px 0 40px;
+        }
+
+        .footer-newsletter {
+            grid-column: auto;
+        }
+
+        .newsletter-form {
+            grid-template-columns: 1fr;
+            border-radius: 24px;
+            padding: 8px;
+        }
+
+        .newsletter-form input {
+            min-height: 46px;
+        }
+
+        .newsletter-form button {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .footer-bottom {
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 18px;
+        }
+
+        .footer-policy {
+            gap: 16px 24px;
+        }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        .client-marquee {
+            animation: none;
+        }
+
+        * {
+            transition-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+        }
+        }
+
+
+    
+        /* Font update: Avenir primary, Manrope secondary */
+        body {
+        font-family: Avenir, "Avenir Next", Manrope, "Segoe UI", Arial, sans-serif !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        .hero-title,
+        .section-title,
+        .brand,
+        .brand small,
+        .nav-links,
+        .nav-links a,
+        .nav-cta,
+        .mobile-menu a,
+        .btn,
+        .section-kicker,
+        .hero-kicker,
+        .service-card h3,
+        .portfolio-content h3,
+        .footer-cta h2,
+        .footer-logo-row,
+        .footer-column h3,
+        .footer-newsletter h3,
+        .newsletter-form button,
+        .stat-card strong {
+        font-family: Avenir, "Avenir Next", Manrope, "Segoe UI", Arial, sans-serif !important;
+        font-weight: 800 !important;
+        }
+
+        p,
+        .hero-copy,
+        .section-copy,
+        .service-card p,
+        .portfolio-content p,
+        .footer-brand p,
+        .footer-newsletter p {
+        font-family: Avenir, "Avenir Next", Manrope, "Segoe UI", Arial, sans-serif !important;
+        font-weight: 400 !important;
+        }
+
+        /* Services marquee, not clients marquee */
+        .scope-marquee-section {
+        padding: 26px 0 !important;
+        }
+
+        .scope-marquee-item {
+        font-family: Manrope, Avenir, "Avenir Next", "Segoe UI", Arial, sans-serif !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.12em !important;
+        }
+
+        /* Static client section - no marquee animation */
+        .client-static-section {
+        background: var(--white);
+        border-top: 1px solid rgba(216, 206, 193, 0.66);
+        border-bottom: 1px solid rgba(216, 206, 193, 0.66);
+        }
+
+        .client-static-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+        }
+
+        .client-static-logo {
+        min-height: 128px;
+        border-radius: 22px;
+        overflow: hidden;
+        background: var(--white);
+        border: 1px solid rgba(216, 206, 193, 0.72);
+        transition: transform 0.12s ease, background 0.12s ease;
+        }
+
+        .client-static-logo:hover {
+        transform: translateY(-5px);
+        background: var(--beige);
+        }
+
+        .client-static-logo img {
+        height: 100%;
+        object-fit: cover;
+        }
+
+        @media (max-width: 1120px) {
+        .client-static-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        }
+
+        @media (max-width: 760px) {
+        .client-static-grid {
+            grid-template-columns: 1fr;
+        }
+        }
+
+    
+        /* Contact form */
+        .contact-section {
+        background:
+            radial-gradient(circle at 88% 12%, rgba(91, 42, 134, 0.10), transparent 30%),
+            linear-gradient(180deg, var(--beige-2), var(--white));
+        }
+
+        .contact-grid {
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 46px;
+        align-items: start;
+        }
+
+        .contact-copy {
+        position: sticky;
+        top: 130px;
+        }
+
+        .contact-details {
+        display: grid;
+        gap: 12px;
+        margin-top: 30px;
+        color: var(--muted);
+        line-height: 1.58;
+        font-family: Avenir, "Avenir Next", Manrope, "Segoe UI", Arial, sans-serif;
+        }
+
+        .contact-details span,
+        .contact-details a {
+        display: block;
+        padding: 15px 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(216, 206, 193, 0.70);
+        color: var(--muted);
+        }
+
+        .contact-details a {
+        color: var(--purple);
+        }
+
+        .contact-form {
+        padding: 30px;
+        border-radius: 30px;
+        background:
+            radial-gradient(circle at 84% 10%, rgba(91, 42, 134, 0.12), transparent 34%),
+            rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(216, 206, 193, 0.76);
+        box-shadow: 0 22px 70px rgba(43, 18, 61, 0.10);
+        display: grid;
+        gap: 14px;
+        }
+
+        .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+        width: 100%;
+        border: 1px solid rgba(216, 206, 193, 0.92);
+        background: var(--beige-2);
+        color: var(--black);
+        border-radius: 16px;
+        padding: 16px 17px;
+        outline: none;
+        font-family: Avenir, "Avenir Next", Manrope, "Segoe UI", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .contact-form textarea {
+        min-height: 150px;
+        resize: vertical;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+        color: rgba(0, 0, 0, 0.46);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+        border-color: rgba(91, 42, 134, 0.58);
+        background: var(--white);
+        }
+
+        .contact-form .btn {
+        width: fit-content;
+        margin-top: 6px;
+        }
+
+        @media (max-width: 1120px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-copy {
+            position: static;
+        }
+        }
+
+        @media (max-width: 760px) {
+        .contact-form {
+            padding: 22px;
+            border-radius: 24px;
+        }
+
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+        }
+        }
+
+    
+        /* FIX: Working services marquee after hero */
+        .scope-marquee-section {
+        position: relative !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        padding: 26px 0 !important;
+        background:
+            radial-gradient(circle at 84% 24%, rgba(91, 42, 134, 0.16), transparent 28%),
+            linear-gradient(90deg, var(--black), var(--purple-dark) 58%, var(--purple)) !important;
+        color: var(--beige) !important;
+        border-top: 1px solid rgba(247, 243, 236, 0.12) !important;
+        border-bottom: 1px solid rgba(247, 243, 236, 0.12) !important;
+        }
+
+        .scope-marquee-track {
+        display: flex !important;
+        align-items: center !important;
+        width: max-content !important;
+        min-width: 200% !important;
+        animation: servicesMarqueeMove 30s linear infinite !important;
+        will-change: transform !important;
+        }
+
+        .scope-marquee-section:hover .scope-marquee-track {
+        animation-play-state: paused !important;
+        }
+
+        .scope-marquee-group {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0 !important;
+        flex: 0 0 auto !important;
+        }
+
+        .scope-marquee-item {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        margin-right: 54px !important;
+        white-space: nowrap !important;
+        color: rgba(247, 243, 236, 0.88) !important;
+        font-family: Manrope, Avenir, "Avenir Next", "Segoe UI", Arial, sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.16em !important;
+        text-transform: uppercase !important;
+        }
+
+        .scope-marquee-item::before {
+        content: "" !important;
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50% !important;
+        background: var(--beige) !important;
+        opacity: 0.72 !important;
+        flex: 0 0 auto !important;
+        }
+
+        @keyframes servicesMarqueeMove {
+        from { transform: translate3d(0, 0, 0); }
+        to { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @media (max-width: 760px) {
+        .scope-marquee-track {
+            animation-duration: 18s !important;
+        }
+        .scope-marquee-item {
+            margin-right: 34px !important;
+            font-size: 11px !important;
+        }
+        }
+
+    
+        /* FIX: Client image sizing */
+        .client-static-grid {
+        align-items: stretch !important;
+        }
+
+        .client-static-logo {
+        height: 128px !important;
+        min-height: 128px !important;
+        padding: 18px 22px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        background: var(--white) !important;
+        }
+
+        .client-static-logo img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 176px !important;
+        max-height: 76px !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        display: block !important;
+        margin: 0 auto !important;
+        }
+
+        @media (max-width: 760px) {
+        .client-static-logo {
+            height: 116px !important;
+            min-height: 116px !important;
+        }
+
+        .client-static-logo img {
+            max-width: 190px !important;
+            max-height: 70px !important;
+        }
+        }
+
+    
+        /* Portfolio gallery section */
+        .portfolio-gallery {
+        margin-top: 56px;
+        padding-top: 48px;
+        border-top: 1px solid rgba(216, 206, 193, 0.76);
+        }
+
+        .portfolio-gallery-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 26px;
+        }
+
+        .portfolio-gallery-head h3 {
+        max-width: 720px;
+        font-size: clamp(28px, 3.2vw, 46px);
+        line-height: 1.06;
+        letter-spacing: -0.045em;
+        color: var(--black);
+        }
+
+        .portfolio-gallery-head p {
+        max-width: 430px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.75;
+        }
+
+        .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        }
+
+        .gallery-item {
+        position: relative;
+        min-height: 300px;
+        border-radius: 28px;
+        overflow: hidden;
+        background: var(--beige);
+        border: 1px solid rgba(216, 206, 193, 0.72);
+        box-shadow: 0 20px 64px rgba(43, 18, 61, 0.08);
+        }
+
+        .gallery-item.large {
+        grid-column: span 2;
+        min-height: 420px;
+        }
+
+        .gallery-item.tall {
+        min-height: 420px;
+        }
+
+        .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+        }
+
+        .gallery-item:hover img {
+        transform: scale(1.06);
+        }
+
+        .gallery-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 36%, rgba(0, 0, 0, 0.68));
+        pointer-events: none;
+        }
+
+        .gallery-caption {
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+        z-index: 2;
+        color: var(--white);
+        }
+
+        .gallery-caption span {
+        display: block;
+        color: var(--beige);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        }
+
+        .gallery-caption h4 {
+        font-size: 24px;
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+        font-weight: 800;
+        }
+
+        /* Footer social media icons */
+        .social-icons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+        }
+
+        .social-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(216, 206, 193, 0.78);
+        color: var(--purple-dark);
+        transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease;
+        }
+
+        .social-icon:hover {
+        transform: translateY(-3px);
+        background: var(--purple);
+        color: var(--white);
+        }
+
+        .social-icon svg {
+        width: 19px;
+        height: 19px;
+        fill: currentColor;
+        display: block;
+        }
+
+        .contact-social {
+        margin-top: 24px;
+        }
+
+        .contact-social-label {
+        color: var(--black);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        }
+
+        @media (max-width: 1120px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+        }
+        }
+
+        @media (max-width: 760px) {
+        .portfolio-gallery-head {
+            display: block;
+        }
+
+        .portfolio-gallery-head p {
+            margin-top: 14px;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-item,
+        .gallery-item.large,
+        .gallery-item.tall {
+            grid-column: auto;
+            min-height: 320px;
+        }
+        }
+
+    
+        /* Floating WhatsApp button */
+        .floating-whatsapp {
+        position: fixed;
+        right: 22px;
+        bottom: 86px;
+        z-index: 999;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--purple-dark);
+        color: var(--white);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 18px 42px rgba(43, 18, 61, 0.24);
+        transition: transform 0.12s ease, background 0.12s ease;
+        }
+
+        .floating-whatsapp:hover {
+        transform: translateY(-3px);
+        background: var(--purple);
+        }
+
+        .floating-whatsapp svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+        display: block;
+        }
+
+        @media (max-width: 760px) {
+        .floating-whatsapp {
+            right: 18px;
+            bottom: 82px;
+        }
+        }
+
+    
+        /* Page loader */
+        body.is-loading {
+        overflow: hidden;
+        }
+
+        .site-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        background:
+            radial-gradient(circle at 70% 22%, rgba(91, 42, 134, 0.18), transparent 34%),
+            linear-gradient(135deg, var(--white), var(--beige-2) 52%, var(--beige));
+        transition: opacity 0.65s ease, visibility 0.65s ease;
+        }
+
+        .site-loader.hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        }
+
+        .loader-box {
+        width: min(88vw, 360px);
+        min-height: 240px;
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(216, 206, 193, 0.82);
+        box-shadow: 0 28px 90px rgba(43, 18, 61, 0.14);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 34px;
+        backdrop-filter: blur(16px);
+        }
+
+        .loader-mark {
+        position: relative;
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        margin-bottom: 24px;
+        display: grid;
+        place-items: center;
+        color: var(--purple-dark);
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        background: var(--white);
+        border: 1px solid rgba(216, 206, 193, 0.9);
+        }
+
+        .loader-mark::before,
+        .loader-mark::after {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: var(--purple);
+        border-right-color: rgba(91, 42, 134, 0.28);
+        animation: loaderSpin 1.1s linear infinite;
+        }
+
+        .loader-mark::after {
+        inset: -16px;
+        border-top-color: rgba(43, 18, 61, 0.28);
+        border-right-color: var(--purple-dark);
+        animation-duration: 1.7s;
+        animation-direction: reverse;
+        }
+
+        .loader-title {
+        color: var(--black);
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        }
+
+        .loader-copy {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+        }
+
+        @keyframes loaderSpin {
+        to { transform: rotate(360deg); }
+        }
+
+        /* Stronger upward scroll reveal animation */
+        .reveal,
+        .section,
+        .footer-cta,
+        .footer-main,
+        .footer-bottom,
+        .service-card,
+        .portfolio-card,
+        .gallery-item,
+        .stat-card,
+        .client-static-logo {
+        opacity: 0;
+        transform: translate3d(0, 54px, 0);
+        transition:
+            opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+        }
+
+        .reveal.visible,
+        .section.visible,
+        .footer-cta.visible,
+        .footer-main.visible,
+        .footer-bottom.visible,
+        .service-card.visible,
+        .portfolio-card.visible,
+        .gallery-item.visible,
+        .stat-card.visible,
+        .client-static-logo.visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        }
+
+        .service-card:nth-child(2),
+        .portfolio-card:nth-child(2),
+        .gallery-item:nth-child(2),
+        .stat-card:nth-child(2),
+        .client-static-logo:nth-child(2) {
+        transition-delay: 0.08s;
+        }
+
+        .service-card:nth-child(3),
+        .portfolio-card:nth-child(3),
+        .gallery-item:nth-child(3),
+        .stat-card:nth-child(3),
+        .client-static-logo:nth-child(3) {
+        transition-delay: 0.16s;
+        }
+
+        .service-card:nth-child(4),
+        .gallery-item:nth-child(4),
+        .client-static-logo:nth-child(4) {
+        transition-delay: 0.24s;
+        }
+
+        .service-card:nth-child(5),
+        .gallery-item:nth-child(5),
+        .client-static-logo:nth-child(5) {
+        transition-delay: 0.32s;
+        }
+
+        .service-card:nth-child(6),
+        .gallery-item:nth-child(6) {
+        transition-delay: 0.40s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+        .site-loader {
+            display: none;
+        }
+
+        .reveal,
+        .section,
+        .footer-cta,
+        .footer-main,
+        .footer-bottom,
+        .service-card,
+        .portfolio-card,
+        .gallery-item,
+        .stat-card,
+        .client-static-logo {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+        }
+
+    
+        /* Loader logo image */
+        .loader-mark img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+        display: block;
+        border-radius: 50%;
+        }
+
+        /* FAQ section */
+        .faq-section {
+        background:
+            radial-gradient(circle at 12% 10%, rgba(91, 42, 134, 0.09), transparent 32%),
+            linear-gradient(180deg, var(--white), var(--beige-2));
+        }
+
+        .faq-list {
+        display: grid;
+        gap: 14px;
+        max-width: 980px;
+        margin: 0 auto;
+        }
+
+        .faq-item {
+        border: 1px solid rgba(216, 206, 193, 0.78);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 18px 54px rgba(43, 18, 61, 0.07);
+        overflow: hidden;
+        }
+
+        .faq-question {
+        width: 100%;
+        min-height: 76px;
+        padding: 22px 26px;
+        border: 0;
+        background: transparent;
+        color: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        text-align: left;
+        cursor: pointer;
+        font-family: Avenir, "Avenir Next", Manrope, "Segoe UI", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        }
+
+        .faq-question span {
+        flex: 1;
+        }
+
+        .faq-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        background: var(--beige);
+        color: var(--purple-dark);
+        transition: transform 0.12s ease, background 0.12s ease;
+        }
+
+        .faq-icon::before,
+        .faq-icon::after {
+        content: "";
+        position: absolute;
+        width: 13px;
+        height: 2px;
+        border-radius: 99px;
+        background: currentColor;
+        }
+
+        .faq-icon::after {
+        transform: rotate(90deg);
+        transition: transform 0.12s ease;
+        }
+
+        .faq-item.active .faq-icon {
+        background: var(--purple);
+        color: var(--white);
+        transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-icon::after {
+        transform: rotate(0deg);
+        }
+
+        .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.12s ease;
+        }
+
+        .faq-answer p {
+        padding: 0 26px 24px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+        max-width: 860px;
+        }
+
+        @media (max-width: 760px) {
+        .faq-question {
+            min-height: 68px;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .faq-answer p {
+            padding: 0 20px 22px;
+            font-size: 14px;
+        }
+        }
+
+    
+        /* Online mockup portfolio images */
+        .portfolio-card img,
+        .gallery-item img {
+        background: var(--beige);
+        image-rendering: auto;
+        }
+
+    
+        /* Clean contact details - no boxed values */
+        .contact-details {
+        gap: 11px !important;
+        margin-top: 28px !important;
+        padding-left: 20px !important;
+        border-left: 3px solid var(--purple) !important;
+        }
+
+        .contact-details span,
+        .contact-details a {
+        padding: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        color: var(--muted) !important;
+        line-height: 1.65 !important;
+        }
+
+        .contact-details a {
+        color: var(--purple) !important;
+        font-weight: 800 !important;
+        }
+
+        .contact-details a:hover {
+        color: var(--purple-dark) !important;
+        }
+
+        .footer-main {
+        padding-top: 26px !important;
+        }
+
+    
+        /* Compact gallery override */
+        .portfolio-gallery {
+        margin-top: 34px !important;
+        padding-top: 34px !important;
+        }
+
+        .compact-gallery-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        grid-auto-rows: 165px !important;
+        gap: 10px !important;
+        }
+
+        .compact-gallery-grid .gallery-item {
+        min-height: 0 !important;
+        height: auto !important;
+        border-radius: 18px !important;
+        box-shadow: 0 14px 38px rgba(43, 18, 61, 0.08) !important;
+        }
+
+        .compact-gallery-grid .gallery-item.large {
+        grid-column: span 2 !important;
+        grid-row: span 2 !important;
+        min-height: 0 !important;
+        }
+
+        .compact-gallery-grid .gallery-item.wide {
+        grid-column: span 2 !important;
+        min-height: 0 !important;
+        }
+
+        .compact-gallery-grid .gallery-caption {
+        left: 16px !important;
+        right: 16px !important;
+        bottom: 16px !important;
+        }
+
+        .compact-gallery-grid .gallery-caption h4 {
+        font-size: 18px !important;
+        line-height: 1.1 !important;
+        }
+
+        .compact-gallery-grid .gallery-caption span {
+        font-size: 9px !important;
+        margin-bottom: 6px !important;
+        }
+
+        @media (max-width: 1120px) {
+        .compact-gallery-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+            grid-auto-rows: 160px !important;
+        }
+        }
+
+        @media (max-width: 760px) {
+        .compact-gallery-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-auto-rows: 150px !important;
+            gap: 9px !important;
+        }
+
+        .compact-gallery-grid .gallery-item.large,
+        .compact-gallery-grid .gallery-item.wide {
+            grid-column: span 2 !important;
+            grid-row: span 1 !important;
+        }
+
+        .compact-gallery-grid .gallery-caption h4 {
+            font-size: 15px !important;
+        }
+        }
+
+    
+        /* FIX: Contact section scroll animation */
+        .contact-section {
+        opacity: 1 !important;
+        transform: none !important;
+        will-change: auto !important;
+        }
+
+        .contact-section.visible {
+        opacity: 1 !important;
+        transform: none !important;
+        }
+
+        .contact-copy {
+        position: static !important;
+        top: auto !important;
+        }
+
+        .contact-section .contact-copy,
+        .contact-section .contact-form {
+        opacity: 0;
+        transform: translate3d(0, 38px, 0);
+        transition:
+            opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .contact-section.visible .contact-copy,
+        .contact-section.visible .contact-form,
+        .contact-section .contact-copy.visible,
+        .contact-section .contact-form.visible {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0) !important;
+        }
+
+        .contact-section .contact-form {
+        transition-delay: 0.08s;
+        }
+
+        /* FIX: About image auto-adjust */
+        .about-image {
+        width: 100% !important;
+        min-height: 0 !important;
+        height: clamp(380px, 48vw, 560px) !important;
+        }
+
+        .about-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        }
+
+        @media (max-width: 760px) {
+        .about-image {
+            height: auto !important;
+            aspect-ratio: 4 / 3 !important;
+        }
+        }
+
+    </style>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Akshar Foshan",
+    "alternateName": "Aksha (Foshan) Hotel Furniture Co., Ltd.",
+    "email": "yogin@aksharfoshan.com",
+    "telephone": "+1 (760) 617-0800",
+    "contactPoint": [
+        {
+        "@type": "ContactPoint",
+        "telephone": "+1 (760) 617-0800",
+        "contactType": "sales",
+        "availableLanguage": [
+            "English"
+        ]
+        },
+        {
+        "@type": "ContactPoint",
+        "telephone": "+1 (760) 617-0800",
+        "contactType": "WhatsApp"
+        }
+    ],
+    "sameAs": [
+        "https://www.instagram.com/aksharfoshan",
+        "https://www.linkedin.com/company/akshar-foshan-furniture/"
+    ]
+    }
+    </script>
+    </head>
+
+    <body class="is-loading">
+    <div class="site-loader" id="siteLoader" aria-label="Website loading">
+        <div class="loader-box">
+        <div class="loader-mark"><img src="logo.png" alt="Akshar Foshan logo" /></div>
+        <div class="loader-title">Akshar Foshan</div>
+        <div class="loader-copy">Loading hospitality FF&amp;E experience</div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <nav class="navbar">
+        <a href="#home" class="brand" aria-label="Akshar Foshan Home">
+            <img class="brand-logo" src="logo.png" alt="Akshar Foshan logo" />
+            <div>
+            Akshar Foshan
+            <small>Hospitality FF&amp;E</small>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#clients">Clients</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#faqs">FAQs</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <a href="Akshar-foshan-brochure.pdf" class="nav-cta" download>Download Brochure</a>
+
+        <button class="hamburger" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#clients">Clients</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+        <a href="Akshar-foshan-brochure.pdf" class="mobile-cta" download>Download Brochure</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero: flex text + image -->
+        <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+            <div class="hero-kicker">Hospitality FF&amp;E Solutions</div>
+            <h1 class="hero-title">Hotel furniture made <span>simple.</span></h1>
+            <p class="hero-copy">
+                Akshar Foshan supports hotel owners, designers, contractors, and procurement teams with casegoods, upholstery, lighting, mirrors, bathroom accessories, sourcing, quality control, and logistics coordination.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="assets/brochure.pdf" class="btn btn-secondary" download>Download Brochure</a>
+            </div>
+            </div>
+
+            <div class="hero-image-wrap reveal">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=82" alt="Online stock image of premium hospitality interior" loading="eager" />
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Services marquee after hero -->
+        <section class="scope-marquee-section reveal" aria-label="Akshar Foshan services marquee">
+        <div class="scope-marquee-track">
+            <div class="scope-marquee-group">
+            <div class="scope-marquee-item">Design &amp; Budget Consulting</div>
+            <div class="scope-marquee-item">Sourcing &amp; Procurement</div>
+            <div class="scope-marquee-item">FF&amp;E Package Management</div>
+            <div class="scope-marquee-item">Quality Control</div>
+            <div class="scope-marquee-item">Factory Inspection</div>
+            <div class="scope-marquee-item">FOB / DDP Logistics</div>
+            <div class="scope-marquee-item">Approval Support</div>
+            <div class="scope-marquee-item">Warranty Coordination</div>
+            </div>
+            <div class="scope-marquee-group" aria-hidden="true">
+            <div class="scope-marquee-item">Design &amp; Budget Consulting</div>
+            <div class="scope-marquee-item">Sourcing &amp; Procurement</div>
+            <div class="scope-marquee-item">FF&amp;E Package Management</div>
+            <div class="scope-marquee-item">Quality Control</div>
+            <div class="scope-marquee-item">Factory Inspection</div>
+            <div class="scope-marquee-item">FOB / DDP Logistics</div>
+            <div class="scope-marquee-item">Approval Support</div>
+            <div class="scope-marquee-item">Warranty Coordination</div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Static clients / brand-style references -->
+        <section class="client-static-section section reveal" id="clients">
+        <div class="container">
+            <div class="section-header">
+            <div>
+                <div class="section-kicker">Clients</div>
+                <h2 class="section-title">Hospitality brand-style references.</h2>
+            </div>
+            <p class="section-copy">
+                Static client reference blocks. Replace these with final approved client logos whenever ready.
+            </p>
+            </div>
+
+            <div class="client-static-grid">
+            <div class="client-static-logo"><img src="assets/clients/InterContinental_Hotels_Group-Logo.png" alt="IHG brand-style reference" /></div>
+            <div class="client-static-logo"><img src="assets/clients/MarriottLogo.png" alt="Marriott brand-style reference" /></div>
+            <div class="client-static-logo"><img src="assets/clients/Hilton.png" alt="Hilton brand-style reference" /></div>
+            <div class="client-static-logo"><img src="assets/clients/Choice-hotels.png" alt="Choice Hotels brand-style reference" /></div>
+            <div class="client-static-logo"><img src="assets/clients/wyndham-hotels.png" alt="Wyndham brand-style reference" /></div>
+            </div>
+        </div>
+        </section>
+
+        <!-- About image + text + stats -->
+        <section class="section" id="about">
+        <div class="container about-grid">
+            <div class="about-image reveal">
+            <img src="assets/about.jpg" alt="Akshar Foshan hotel furniture and room interior" loading="lazy" />
+            </div>
+
+            <div class="about-text reveal">
+            <div class="section-kicker">About Us</div>
+            <h2 class="section-title">Your partner in hospitality furnishings.</h2>
+            <p>
+                Akshar Foshan serves hospitality furniture projects through an international sales and project management approach for hotel furniture and FF&amp;E requirements.
+            </p>
+            <p>
+                We support complete project flow, from design and budget planning to sourcing, procurement, factory inspection, logistics, approval support, and warranty coordination.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                <strong>13+</strong>
+                <span>Cooperating facilities in China mainland</span>
+                </div>
+                <div class="stat-card">
+                <strong>5+</strong>
+                <span>Years specialized hospitality experience</span>
+                </div>
+                <div class="stat-card">
+                <strong>360°</strong>
+                <span>FF&amp;E sourcing, QC and logistics support</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Services grid with icons -->
+        <section class="section services-section" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+            <div>
+                <div class="section-kicker">Services</div>
+                <h2 class="section-title">Project support from concept to completion.</h2>
+            </div>
+            <p class="section-copy">
+                A clean service grid for buyers who need fast clarity on what Akshar Foshan can handle.
+            </p>
+            </div>
+
+            <div class="services-grid">
+            <article class="service-card reveal">
+                <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 18V6h16v12H4Z"/><path d="M8 10h8M8 14h5"/></svg>
+                </div>
+                <h3>Design & Budget Consulting</h3>
+                <p>Align project vision, specifications, room requirements, and budget direction before sourcing begins.</p>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+                </div>
+                <h3>Sourcing & Procurement</h3>
+                <p>Complete FF&amp;E product sourcing across casegoods, upholstery, fixtures, mirrors, outdoor furniture, and accessories.</p>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4Z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <h3>Quality Control</h3>
+                <p>Factory inspection support for material, finish, production consistency, packaging, and shipment readiness.</p>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3V7Z"/><path d="M14 11h4l3 3v3h-7v-6Z"/><path d="M7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+                </div>
+                <h3>FOB / DDP Logistics</h3>
+                <p>Flexible shipment support for international hospitality projects, including door-to-door coordination where applicable.</p>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+                </div>
+                <h3>Approval Support</h3>
+                <p>Support with specification alignment, sample coordination, and project documentation for smoother review workflows.</p>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 21s7-4 7-11a7 7 0 0 0-14 0c0 7 7 11 7 11Z"/><path d="M9 10l2 2 4-4"/></svg>
+                </div>
+                <h3>Warranty Coordination</h3>
+                <p>Post-delivery support to help clients manage queries, follow-ups, and service coordination after shipment.</p>
+            </article>
+            </div>
+        </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="section" id="portfolio">
+        <div class="container">
+            <div class="section-header reveal">
+            <div>
+                <div class="section-kicker">Portfolio</div>
+                <h2 class="section-title">Selected hospitality furniture scope.</h2>
+            </div>
+            <p class="section-copy">
+                Online mockup visuals are added for now so the website can go live until final project images are ready.
+            </p>
+            </div>
+
+            <div class="portfolio-grid">
+            <article class="portfolio-card wide reveal">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=82" alt="Online stock image of premium hotel guest room furniture" loading="lazy" />
+                <div class="portfolio-content">
+                <span>Guest Rooms</span>
+                <h3>Room furniture packages</h3>
+                <p>Headboards, nightstands, desks, vanities, TV panels, dressers, closets, and complete room furniture coordination.</p>
+                </div>
+            </article>
+
+            <article class="portfolio-card reveal">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=82" alt="Online mockup of hospitality casegoods and custom hotel furniture" loading="lazy" />
+                <div class="portfolio-content">
+                <span>Casegoods</span>
+                <h3>Custom furniture</h3>
+                <p>Hotel-ready casegoods planned around room layout and project specifications.</p>
+                </div>
+            </article>
+
+            <article class="portfolio-card reveal">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=82" alt="Online mockup of hotel upholstery and soft seating" loading="lazy" />
+                <div class="portfolio-content">
+                <span>Upholstery</span>
+                <h3>Seating and sofas</h3>
+                <p>Sleeper sofas, lounge chairs, ottomans, benches, and public area seating.</p>
+                </div>
+            </article>
+
+
+            </div>
+
+            <div class="portfolio-gallery reveal">
+            <div class="portfolio-gallery-head">
+                <h3>Compact project gallery.</h3>
+                <p>
+                Online stock visuals are used for now so the website looks complete and live-ready until final project photos are available.
+                </p>
+            </div>
+
+            <div class="gallery-grid compact-gallery-grid">
+                <article class="gallery-item large">
+                <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=82" alt="Online stock guest room furniture reference" loading="lazy" />
+                <div class="gallery-caption">
+                    <span>Guest Room</span>
+                    <h4>Complete room furniture</h4>
+                </div>
+                </article>
+
+                <article class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=82" alt="Online stock lobby furniture reference" loading="lazy" />
+                <div class="gallery-caption">
+                    <span>Lobby</span>
+                    <h4>Public area furniture</h4>
+                </div>
+                </article>
+
+                <article class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=82" alt="Online stock casegoods furniture reference" loading="lazy" />
+                <div class="gallery-caption">
+                    <span>Casegoods</span>
+                    <h4>Custom furniture units</h4>
+                </div>
+                </article>
+
+                <article class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=82" alt="Online stock upholstery reference" loading="lazy" />
+                <div class="gallery-caption">
+                    <span>Upholstery</span>
+                    <h4>Soft seating</h4>
+                </div>
+                </article>
+
+                <article class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=82" alt="Online stock bathroom vanity and mirror reference" loading="lazy" />
+                <div class="gallery-caption">
+                    <span>Bathroom</span>
+                    <h4>Vanity and mirror scope</h4>
+                </div>
+                </article>
+
+                <article class="gallery-item wide">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=82" alt="Online stock outdoor furniture reference" loading="lazy" />
+                <div class="gallery-caption">
+                    <span>Outdoor</span>
+                    <h4>Outdoor FF&amp;E references</h4>
+                </div>
+                </article>
+            </div>
+            </div>
+
+
+        </div>
+        </section>
+
+
+        <!-- FAQs -->
+        <section class="section faq-section" id="faqs">
+        <div class="container">
+            <div class="section-header reveal">
+            <div>
+                <div class="section-kicker">FAQs</div>
+                <h2 class="section-title">Common project questions.</h2>
+            </div>
+            <p class="section-copy">
+                Quick answers for hotel owners, designers, contractors, and procurement teams before starting a furniture inquiry.
+            </p>
+            </div>
+
+            <div class="faq-list reveal">
+            <article class="faq-item active">
+                <button class="faq-question" type="button" aria-expanded="true">
+                <span>What type of hotel furniture does Akshar Foshan support?</span>
+                <i class="faq-icon" aria-hidden="true"></i>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    Akshar Foshan supports hotel casegoods, upholstery, guest room furniture, lobby furniture, lighting, mirrors, bathroom accessories, outdoor furniture, and custom FF&amp;E product requirements.
+                </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                <span>Can you work from BOQ, drawings, or brand standards?</span>
+                <i class="faq-icon" aria-hidden="true"></i>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    Yes. You can share BOQ, floor plans, drawings, moodboards, room references, product lists, or brand standards. The team can help map the requirement into a sourcing and furniture scope.
+                </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                <span>Do you handle sourcing and quality inspection?</span>
+                <i class="faq-icon" aria-hidden="true"></i>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    Yes. The project support includes sourcing, procurement coordination, factory follow-up, material review, finish checking, production consistency checks, packing review, and shipment readiness support.
+                </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                <span>Do you support FOB and DDP logistics?</span>
+                <i class="faq-icon" aria-hidden="true"></i>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    Yes. The website scope includes FOB and DDP logistics support depending on the project requirement, destination, and final shipment coordination plan.
+                </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                <span>How can I start an inquiry?</span>
+                <i class="faq-icon" aria-hidden="true"></i>
+                </button>
+                <div class="faq-answer">
+                <p>
+                    You can use the contact form, email yogin@aksharfoshan.com, or message directly on WhatsApp at +1 (760) 617-0800. Share your project location, product requirement, quantity, and available reference files.
+                </p>
+                </div>
+            </article>
+            </div>
+        </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact-section" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-copy reveal">
+            <div class="section-kicker">Contact</div>
+            <h2 class="section-title">Start your hotel furniture inquiry.</h2>
+
+
+            <div class="contact-details">
+                <span>Aksha (Foshan) Hotel Furniture Co., Ltd.</span>
+                <span>No. 29, Sanling Road, Hecheng Sub-district, Gaoming District, Foshan City</span>
+                <a href="tel:+17606170800">Tel: +1 (760) 617-0800</a>
+                <a href="https://wa.me/17606170800" target="_blank" rel="noopener">WhatsApp: +1 (760) 617-0800</a>
+                <a href="mailto:yogin@aksharfoshan.com">Email: yogin@aksharfoshan.com</a>
+            </div>
+
+
+            </div>
+
+            <form class="contact-form reveal">
+            <div class="form-row">
+                <input type="text" placeholder="Your Name" aria-label="Your Name" />
+                <input type="email" placeholder="Email Address" aria-label="Email Address" />
+            </div>
+
+            <div class="form-row">
+                <input type="text" placeholder="Company / Hotel Name" aria-label="Company or Hotel Name" />
+                <input type="text" placeholder="Project Location" aria-label="Project Location" />
+            </div>
+
+            <div class="form-row">
+                <input type="text" placeholder="Product Requirement" aria-label="Product Requirement" />
+                <input type="text" placeholder="Approx. Quantity / Scope" aria-label="Approximate Quantity or Scope" />
+            </div>
+
+            <textarea placeholder="Tell us about your project requirement" aria-label="Project Requirement"></textarea>
+
+            <button type="submit" class="btn btn-primary">Send Inquiry <span>→</span></button>
+            </form>
+        </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-shell">
+
+        <div class="footer-main">
+            <div class="footer-brand">
+            <div class="footer-logo-row">
+                <img src="logo.png" alt="Akshar Foshan logo" />
+                <span>Akshar Foshan</span>
+            </div>
+            <p>
+                Hospitality furniture portfolio and FF&amp;E support for hotel owners, designers, contractors, and procurement teams.
+            </p>
+
+            <div class="social-icons" aria-label="Social media links">
+                <a class="social-icon" href="https://www.instagram.com/aksharfoshan" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.4A4.6 4.6 0 1 1 12 16.6a4.6 4.6 0 0 1 0-9.2Zm0 2A2.6 2.6 0 1 0 12 14.6a2.6 2.6 0 0 0 0-5.2Zm5-2.55a1.05 1.05 0 1 1-1.05 1.05A1.05 1.05 0 0 1 17 6.85Z"/></svg>
+                </a>
+                <a class="social-icon" href="https://www.linkedin.com/company/akshar-foshan-furniture/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v11H3V10Zm6 0h3.8v1.5h.05A4.1 4.1 0 0 1 16.55 9.7c4 0 4.75 2.63 4.75 6.05V21h-4v-4.65c0-1.1-.02-2.55-1.55-2.55-1.55 0-1.8 1.22-1.8 2.48V21H10V10Z"/></svg>
+                </a>
+                <a class="social-icon" href="#contact" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M14 8.5V6.75c0-.85.2-1.25 1.35-1.25H17V2.2c-.8-.1-1.6-.2-2.4-.2-3 0-5 1.8-5 5.1v1.4H6.5V12h3.1v10H14V12h3.05l.45-3.5H14Z"/></svg>
+                </a>
+                <a class="social-icon" href="https://wa.me/17606170800" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2.1 17.7L1 23l5.45-1.05A11.8 11.8 0 0 0 20.5 3.5ZM12 20a8 8 0 0 1-4.08-1.12l-.29-.17-3.05.59.61-2.98-.19-.31A8 8 0 1 1 12 20Zm4.45-5.95c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06a6.54 6.54 0 0 1-1.93-1.19 7.2 7.2 0 0 1-1.33-1.65c-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42h-.46a.88.88 0 0 0-.64.3 2.7 2.7 0 0 0-.84 2c0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+                </a>
+            </div>
+
+            </div>
+
+            <div class="footer-column">
+            <h3>Company</h3>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#faqs">FAQs</a>
+                <a href="#contact">Contact</a>
+            </div>
+            </div>
+
+            <div class="footer-column">
+            <h3>Products</h3>
+            <div class="footer-links">
+                <a href="#portfolio">Casegoods</a>
+                <a href="#portfolio">Upholstery</a>
+                <a href="#portfolio">Lighting</a>
+                <a href="#portfolio">Mirrors</a>
+                <a href="#portfolio">Outdoor Furniture</a>
+            </div>
+            </div>
+
+            <div class="footer-newsletter">
+            <h3>Brochure</h3>
+            <p>
+                Download the catalog for hotel-style references, product categories, workshop visuals, and FF&amp;E support overview.
+            </p>
+
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email address" aria-label="Email address" />
+                <button type="submit">Subscribe <span>›</span></button>
+            </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Akshar Foshan. All rights reserved.</p>
+            <div class="footer-policy">
+            <a href="assets/brochure.pdf" download>Download Brochure</a>
+            <a href="https://wa.me/17606170800" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://www.instagram.com/aksharfoshan" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/company/akshar-foshan-furniture/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#contact">Contact</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+    <a class="floating-whatsapp" href="https://wa.me/17606170800" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2.1 17.7L1 23l5.45-1.05A11.8 11.8 0 0 0 20.5 3.5ZM12 20a8 8 0 0 1-4.08-1.12l-.29-.17-3.05.59.61-2.98-.19-.31A8 8 0 1 1 12 20Zm4.45-5.95c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06a6.54 6.54 0 0 1-1.93-1.19 7.2 7.2 0 0 1-1.33-1.65c-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42h-.46a.88.88 0 0 0-.64.3 2.7 2.7 0 0 0-.84 2c0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+    </a>
+
+    <button class="scroll-top" type="button" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+        // Initial page loader
+        const siteLoader = document.querySelector('#siteLoader');
+        const hideLoader = () => {
+            if (!siteLoader) return;
+            siteLoader.classList.add('hide');
+            document.body.classList.remove('is-loading');
+        };
+
+        window.addEventListener('load', hideLoader);
+        setTimeout(hideLoader, 1800);
+
+        // Add reveal animation to major cards/elements automatically
+        document.querySelectorAll(
+            '.service-card, .portfolio-card, .gallery-item, .stat-card, .client-static-logo, .footer-cta, .footer-main, .footer-bottom, .contact-copy, .contact-form'
+        ).forEach((item) => item.classList.add('reveal'));
+
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('#mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', function () {
+            const isOpen = mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active', isOpen);
+            document.body.classList.toggle('menu-open', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            mobileLinks.forEach((link) => {
+            link.addEventListener('click', function () {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+            });
+        }
+
+        // Smooth scroll for all internal anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (event) {
+            const targetId = this.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            event.preventDefault();
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            });
+        });
+
+        // Reveal all sections/cards on scroll
+        const revealItems = document.querySelectorAll('.reveal, .section, .contact-copy, .contact-form');
+
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+                }
+            });
+            }, {
+            threshold: 0.10,
+            rootMargin: '0px 0px -70px 0px'
+            });
+
+            revealItems.forEach((item) => revealObserver.observe(item));
+        } else {
+            revealItems.forEach((item) => item.classList.add('visible'));
+        }
+
+        // Scroll-to-top button
+        const scrollTopButton = document.querySelector('.scroll-top');
+
+        function updateScrollTopButton() {
+            if (window.scrollY > 520) {
+            scrollTopButton.classList.add('show');
+            } else {
+            scrollTopButton.classList.remove('show');
+            }
+        }
+
+        window.addEventListener('scroll', updateScrollTopButton, { passive: true });
+        updateScrollTopButton();
+
+        scrollTopButton.addEventListener('click', function () {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+        });
+
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-item').forEach((item) => {
+            const button = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            if (!button || !answer) return;
+
+            if (item.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+
+            button.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach((otherItem) => {
+                const otherButton = otherItem.querySelector('.faq-question');
+                const otherAnswer = otherItem.querySelector('.faq-answer');
+                otherItem.classList.remove('active');
+                if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+                if (otherAnswer) otherAnswer.style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+            });
+        });
+
+        // Demo form only
+        document.querySelectorAll('form').forEach((form) => {
+            form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Form demo only. Connect this to your backend, Formspree, Netlify Forms, or WhatsApp later.');
+            });
+        });
+        });
+    </script>
+    </body>
+    </html>

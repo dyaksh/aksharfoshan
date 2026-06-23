@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Avenir", "Avenir Next", "Montserrat", sans-serif;
+    @apply bg-brandBg-soft text-[#111111] overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 10% 10%, rgba(59, 30, 112, 0.04), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(90, 53, 162, 0.03), transparent 40%),
+      linear-gradient(180deg, #FAF8F5 0%, #FFFFFF 50%, #FAF8F5 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Avenir", "Avenir Next", "Playfair Display", serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphic Navigation Card */
+  .glass-nav {
+    @apply bg-brandBg-soft/80 backdrop-blur-xl border border-brandForm-border/50 shadow-lg shadow-primary-dark/5;
+  }
+
+  .glass-card {
+    @apply bg-[#FFFFFF]/70 backdrop-blur-md border border-[#DDD3C8]/40 shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+
+  /* Luxurious Button Transitions */
+  .btn-premium-primary {
+    @apply relative px-8 py-3 rounded-full bg-[#3B1E70] text-[#FAF8F5] text-sm font-semibold tracking-wider uppercase overflow-hidden shadow-lg shadow-primary-purple/20 transition-all duration-300 hover:bg-[#2B124C] hover:shadow-xl hover:shadow-primary-purple/30 active:scale-95;
+  }
+
+  .btn-premium-secondary {
+    @apply relative px-8 py-3 rounded-full bg-transparent border border-primary-purple/30 text-[#3B1E70] text-sm font-semibold tracking-wider uppercase transition-all duration-300 hover:bg-[#FAF8F5] hover:border-primary-purple hover:text-primary-dark active:scale-95;
+  }
+
+  .btn-premium-dark {
+    @apply px-8 py-3 rounded-full bg-[#111111] text-[#FAF8F5] text-sm font-semibold tracking-wider uppercase transition-all duration-300 hover:bg-[#2B124C] active:scale-95;
+  }
+
+  /* Custom input styling */
+  .input-premium {
+    @apply w-full px-5 py-4 rounded-2xl bg-brandBg-soft border border-brandForm-border focus:border-primary-purple focus:bg-white transition-all duration-300 outline-none placeholder-brandForm-border/80 text-sm;
+  }
+
+  /* Interactive FAQ Accordion header */
+  .faq-accordion-header {
+    @apply flex items-center justify-between w-full py-5 text-left font-semibold text-lg text-primary-dark transition-all duration-300 hover:text-primary-purple;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD3C8;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A35A2;
+}
+
+/* Active links dot styling */
+.nav-link-active {
+  @apply text-primary-purple font-bold relative;
+}
+
+.nav-link-active::after {
+  content: "";
+  @apply absolute bottom-[-4px] left-0 w-full h-[2px] bg-primary-purple rounded-full;
+}
+
+/* Page transitions wrapper */
+.page-transition-wrapper {
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide scrollbars for horizontal swipable lists on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Infinite Scrolling Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
